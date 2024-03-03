@@ -37,8 +37,8 @@ class ModuleName(interactions.Extension):
     @module_group.subcommand("top", sub_cmd_description="回到顶楼")
     
     async def module_group_ping(self, ctx: interactions.SlashContext):
-        mess=await ctx.send('...')
         
-        elev=mess.jump_url.rsplit('/', 1)[0]+'/0'
-        await mess.edit(elev)
+        
+        elev=ctx.message.jump_url.rsplit('/', 1)[0]+'/0'
+        await ctx.send(elev)
         

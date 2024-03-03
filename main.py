@@ -40,5 +40,5 @@ class ModuleName(interactions.Extension):
         
         mess= await ctx.send('...')
         elev=mess.jump_url.rsplit('/', 1)[0]+'/0'
-        await mess.edit(elev)
+        await mess.edit(content=elev)
         

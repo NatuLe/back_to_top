@@ -38,7 +38,7 @@ class ModuleName(interactions.Extension):
     
     async def module_group_ping(self, ctx: interactions.SlashContext):
         channel=ctx.channel
-        mess=channel.fetch_message(message_id=channel.last_message_id)
+        mess=await channel.fetch_message(message_id=channel.last_message_id)
         
         elev=mess.jump_url.rsplit('/', 1)[0]+'/0'
         await ctx.send(content=elev)

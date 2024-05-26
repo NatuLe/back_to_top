@@ -24,7 +24,7 @@ import interactions
 '''
 Replace the ModuleName with any name you'd like
 '''
-class ModuleName(interactions.Extension):
+class BackToTop(interactions.Extension):
     module_base: interactions.SlashCommand = interactions.SlashCommand(
         name="back",
         description="回"
@@ -36,16 +36,16 @@ class ModuleName(interactions.Extension):
 
     @module_group.subcommand("top", sub_cmd_description="回到顶楼")
     
-    async def module_group_ping(self, ctx: interactions.SlashContext):
+    async def top(self, ctx: interactions.SlashContext):
         channel=ctx.channel
         try:
             async for mess in channel.history(limit=1):
 
             
         
-                elev=mess.jump_url.rsplit('/', 1)[0]+'/0'
+                elev=mess.jump_url
             
-                await ctx.send(content=elev)
+            await ctx.send(content=elev)
         except:
-            await ctx.send(content='再试一次!')
+            await ctx.send(content='再试一次!',ephemeral=True)
         

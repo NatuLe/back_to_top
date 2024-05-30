@@ -43,7 +43,7 @@ class BackToTop(interactions.Extension):
 
             
         
-                elev=mess.jump_url.split('/')[0]+'/0'
+                elev=mess.jump_url.rsplit('/',1)[0]+'/0'
             
             await ctx.send(content=elev)
         except:
